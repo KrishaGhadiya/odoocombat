@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Recipes for Weight Loss & Diet{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center"><strong>Recipes for Weight Loss & Diet</strong></h1>
+            <form class="form-inline mt-4 mb-4" method="GET" action="/search_recipes">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search recipes..." name="query" value="{{ request.args.get('query', '') }}">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        {% if recipes %}
+        {% for r in recipes %}
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ r.name }}</h2>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="card-text"><strong>Cook time:</strong> {{ r.cooktime }}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="card-text"><strong>Calories:</strong> {{ r.calories }}</p>
+                        </div>
+                    </div>
+                    <p class="card-text"><strong>Description:</strong><br>{{ r.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        
+        <div class="col-12">
+            <p>No recipes found.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

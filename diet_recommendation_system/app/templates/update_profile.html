@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="vh-100 gradient-custom">
+  <div class="container">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+              <h3>Update Profile</h3>
+              <form action="{{ url_for('views.update_profile') }}" method="post">
+                <div class="row">
+                     <label for="age">Age</label>
+                            <input type="number" class="form-control form-control-lg" id="age" name="age" value="{{ user.age }}" required>
+                </div>
+                  <div class="row">
+                      <label for="gender">Gender</label>
+                            <select class="form-control" id="gender" name="gender" required>
+                                <option value="Male" {% if user.gender == "Male" %}selected{% endif %}>Male</option>
+                                <option value="Female" {% if user.gender == "Female" %}selected{% endif %}>Female</option>
+                                <option value="Other" {% if user.gender == "Other" %}selected{% endif %}>Other</option>
+                            </select>
+                  </div>
+                  <div class="row">
+                            <label for="weight">Weight (lbs)</label>
+                            <input type="number" class="form-control form-control-lg"  id="weight" name="weight" value="{{ user.weight }}" required>
+                        </div>
+                        <div class="row">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" class="form-control form-control-lg"  id="height" name="height" value="{{ user.height }}" required>
+                        </div>
+                        <div class="row">
+                            <label for="dietary_preferences">Dietary Preferences</label>
+                            <input type="text" class="form-control form-control-lg" id="dietary_preferences" name="dietary_preferences" value="{{ user.dietary_preferences }}">
+                        </div>
+                        <div class="row">
+                            <label for="allergies">Allergies</label>
+                            <input type="text" class="form-control form-control-lg"  id="allergies" name="allergies" value="{{ user.allergies }}">
+                        </div>
+                        <div class="row">
+                            <label for="health_goals">Health Goals</label>
+                            <input type="text" class="form-control form-control-lg"  id="health_goals" name="health_goals" value="{{ user.health_goals }}">
+                        </div>
+                        <button type="submit" class="form-control form-control-lg btn btn-primary btn-block" style="background-color: #71639e !important;" >Save Changes</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--<div class="container mt-5">-->
+<!--    <div class="row justify-content-center">-->
+<!--        <div class="col-md-8">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    <h4>Update Profile</h4>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <form action="{{ url_for('views.update_profile') }}" method="post">-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="age">Age</label>-->
+<!--                            <input type="number" class="form-control" id="age" name="age" value="{{ user.age }}" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="gender">Gender</label>-->
+<!--                            <select class="form-control" id="gender" name="gender" required>-->
+<!--                                <option value="Male" {% if user.gender == "Male" %}selected{% endif %}>Male</option>-->
+<!--                                <option value="Female" {% if user.gender == "Female" %}selected{% endif %}>Female</option>-->
+<!--                                <option value="Other" {% if user.gender == "Other" %}selected{% endif %}>Other</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="weight">Weight (lbs)</label>-->
+<!--                            <input type="number" class="form-control" id="weight" name="weight" value="{{ user.weight }}" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="height">Height (cm)</label>-->
+<!--                            <input type="number" class="form-control" id="height" name="height" value="{{ user.height }}" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="dietary_preferences">Dietary Preferences</label>-->
+<!--                            <input type="text" class="form-control" id="dietary_preferences" name="dietary_preferences" value="{{ user.dietary_preferences }}">-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="allergies">Allergies</label>-->
+<!--                            <input type="text" class="form-control" id="allergies" name="allergies" value="{{ user.allergies }}">-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="health_goals">Health Goals</label>-->
+<!--                            <input type="text" class="form-control" id="health_goals" name="health_goals" value="{{ user.health_goals }}">-->
+<!--                        </div>-->
+<!--                        <button type="submit" class="btn btn-primary btn-block">Save Changes</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+{% endblock %}

@@ -1,0 +1,228 @@
+{% extends "base.html"%}
+
+{% block title %}Sign Up{% endblock %}
+{% block scripts %}
+{% endblock %}
+{% block content %}
+<section class=" gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Sign Up</h3>
+            <form method = "POST">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div data-mdb-input-init class="form-outline">
+                     <label for = "email">Email Address</label>
+                        <input
+                            type = "email"
+                            class="form-control form-control-lg"
+                            id="email"
+                            name="email"
+                            placeholder = "Enter email"
+                            required
+                        />
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div data-mdb-input-init class="form-outline">
+                     <label for="name">First Name</label>
+                        <input
+                            type = "text"
+                            class="form-control form-control-lg"
+                            id="first-name"
+                            name="first-name"
+                            placeholder = "Enter First Name"
+                            required
+                        />
+                  </div>
+
+                </div>
+              </div>
+
+                <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                     <label for = "password1">Height(ft,in)</label>
+                        <input
+                            type = "text"
+                            class="form-control form-control-lg"
+                            id="height"
+                            name="height"
+                            placeholder = "5.1"
+                            required
+                        />
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                         <label for="age">Age (yrs)</label>
+                        <input
+                            class="form-control form-control-lg"
+                            type="text"
+                            placeholder="Age (yrs)"
+                            id = "age"
+                            name = "age"
+                            required
+                        />
+                  </div>
+
+                </div>
+              </div>
+
+                <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                 <div data-mdb-input-init class="form-outline">
+                      <label for="weight">Weight</label>
+                        <input
+                            class="form-control form-control-lg"
+                            type="text"
+                            placeholder="Weight (lbs)"
+                            id = "weight"
+                            name = "weight"
+                            required
+                        />
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1">Gender: </h6>
+
+                  <div class="form-check form-check-inline mt-2">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                      value="option1" checked />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                      value="option2" />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                      value="option3" />
+                    <label class="form-check-label" for="otherGender">Other</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                     <label for = "password1">Password</label>
+                        <input
+                            type = "password"
+                            class="form-control form-control-lg"
+                            id="password1"
+                            name="password1"
+                            placeholder = "Enter password"
+                            required
+                        />
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                     <label for = "password2">Password (Confirm)</label>
+                        <input
+                            type = "password"
+                            class="form-control form-control-lg"
+                            id = "password2"
+                            name = "password2"
+                            placeholder = "Confirm password"
+                            required
+                        />
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div data-mdb-input-init class="form-outline">
+                      <label for="weight">Allergies</label>
+                        <input
+                            class="form-control form-control-lg"
+                            type="text"
+                            placeholder="Allergies"
+                            id = "allergies"
+                            name = "allergies"
+                            required
+                        />
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                          <label for="goals">Health Goals</label>
+                        <select class="form-control form-control-lg" name = "goal" id = "goal">
+                            <option value = "maintain">Maintain weight</option>
+                            <option value = "lose">Lose weight</option>
+                            <option value = "gain">Gain muscle</option>
+                        </select>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+                  <div data-mdb-input-init class="form-outline">
+                      <label for="weight">Dietary Preferences</label>
+                        <input
+                            class="form-control form-control-lg"
+                            type="text"
+                            placeholder="Dietary Preferences"
+                            id = "dietary_preferences"
+                            name = "dietary_preferences"
+                            required
+                        />
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div data-mdb-input-init class="form-outline">
+                       <label for="activity-factor">How active are you?</label>
+                        <select class="form-control form-control-lg" name = "activity-factor" id = "activity-factor">
+                            <option value = "1.2">Sedentary</option>
+                            <option value = "1.375">Lightly active</option>
+                            <option value = "1.55">Moderately active</option>
+                            <option value = "1.725">Very active</option>
+                            <option value = "1.9">Super active</option>
+                        </select>
+                  </div>
+
+                </div>
+              </div>
+                  <div class="row">
+                      <div class="col-3"></div>
+                      <div class="col-6 text-center pt-2">
+                          <input data-mdb-ripple-init class="btn btn-primary btn-lg" style="background-color: #71639e !important;" type="submit" value="Submit"/>
+                      </div>
+                      <div class="col-3"></div>
+                  </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

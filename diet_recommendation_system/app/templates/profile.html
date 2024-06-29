@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="gradient-custom">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-header p-4">
+              <h4>{{ user.first_name }}'s Profile Page</h4>
+          </div>
+            <div class="card-body">
+                    <div class="row text-center">
+                            {% if user.profile_image %}
+                                <img src="{{ url_for('static', filename=user.profile_image) }}" alt="Profile Image" class="img-thumbnail text-center rounded mx-auto d-block" style="  max-height: 150px;">
+                            {% else %}
+                                <img src="{{ url_for('static', filename='profile_images/default_profile.jpg') }}" alt="Default Profile Image" class="img-thumbnail rounded mx-auto d-block" style="  max-height: 150px;">
+                            {% endif %}
+
+
+                    </div>
+                 <form action="{{ url_for('views.update_profile_image') }}" method="post" enctype="multipart/form-data" class="mt-3">
+                     <div class="row">
+                     <div class="col-4"></div>
+                     <div class="col-8">
+<!--                          <div class="row text-center">-->
+                                    <span class="text-center" for="profile_image">Update Profile Image</span>
+                                    <input type="file" class="form-control-file" id="profile_image" name="profile_image">
+<!--                                </div>-->
+                                <button type="submit" class="btn btn-primary mt-2" style="background-color: #71639e !important;">Update Image</button>
+                     </div>
+
+                     <div class="col-3"></div>
+                         </div>
+                            </form>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p><strong>Email:</strong> {{ user.email }}</p>
+                            <p><strong>Gender:</strong> {{ user.sex }}</p>
+                            <p><strong>Weight:</strong> {{ user.weight }} lbs</p>
+                            <p><strong>Height:</strong> {{ user.height }} cm</p>
+                            <p><strong>Age:</strong> {{ user.age }}</p>
+                            <p><strong>Goal:</strong> {{ user.goal }}</p>
+                            <p><strong>Activity Factor:</strong> {{ user.activity_factor }}</p>
+                            <p><strong>Recommended Caloric Intake:</strong> {{ user.recommended_intake }} kcal</p>
+                            <p><strong>Recommended Protein:</strong> {{ user.recommended_protein }} g</p>
+                            <p><strong>Recommended Fats:</strong> {{ user.recommended_fats }} g</p>
+                            <p><strong>Recommended Carbs:</strong> {{ user.recommended_carbs }} g</p>
+                            <a href="{{ url_for('views.update_profile') }}" class="btn btn-primary mt-3" style="background-color: #71639e !important;">Update Profile</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
